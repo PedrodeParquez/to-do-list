@@ -1,0 +1,21 @@
+:root {
+    --black-color: #1B1A17;
+    --greenish-black-color: #1F1E1B;
+    --dark-amber-color: #A35709;
+    --light-amber-color: #FF8303;
+    --ivory-color: #F0E3CA; 
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), url('https://fonts.googleapis.com/css2?family=Roboto&display=swap') format('woff');
+}
+
+body {
+    font-family: Roboto;
+    color: var(--ivory-color);
+    line-height: 18px;
+}
+
