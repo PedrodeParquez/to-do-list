@@ -6,7 +6,7 @@
         {
             "label": "Compile SCSS to CSS",
             "type": "shell",
-            "command": "sass base.scss base.css",
+            "command": "sass src/styles/base.scss src/styles/base.css",
             "group":"build"
         }
     ]

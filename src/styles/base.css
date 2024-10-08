@@ -1,9 +1,11 @@
 :root {
   --black-color: #1B1A17;
   --greenish-black-color: #1F1E1B;
+  --greenish-black-color-hover: #242320;
   --dark-amber-color: #A35709;
   --light-amber-color: #FF8303;
   --ivory-color: #F0E3CA;
+  --ivory-color-hover: #F0E3CAA3;
 }
 
 @font-face {
@@ -17,12 +19,12 @@ body {
   color: var(--ivory-color);
   line-height: 18px;
   background-color: var(--black-color);
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .form-add-task {
@@ -36,54 +38,95 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 .inputs-container input {
-  padding: 10px;
+  padding-left: 10px;
   height: 100%;
   background-color: var(--greenish-black-color);
   border: 2px solid var(--light-amber-color);
   border-radius: 4px;
   cursor: pointer;
+  outline: none;
   background-color: var(--black-color);
-  color: rgba(240, 227, 202, 0.6392156863);
+  color: var(--ivory-color-hover);
   box-sizing: border-box;
 }
 .inputs-container input:first-child {
-  margin-bottom: 15px;
-}
-.inputs-container input:focus {
-  outline: none;
-  color: var(--ivory-color);
+  margin-bottom: 10px;
 }
 .inputs-container input:hover {
-  background-color: #242320;
+  background-color: var(--greenish-black-color-hover);
   color: var(--ivory-color);
 }
 .inputs-container input:hover::placeholder {
-  color: rgba(240, 227, 202, 0.6392156863);
+  color: var(--ivory-color-hover);
 }
 
 .form-add-task button {
   background-color: transparent;
-  border: 5px solid #FF8303;
-  border-radius: 4px;
+  border: 4px solid var(--light-amber-color);
+  border-radius: 8px;
   color: var(--ivory-color);
   font-size: 24px;
   cursor: pointer;
-  margin-left: 15px;
+  margin-left: 10px;
   box-sizing: border-box;
-  aspect-ratio: 1;
+  aspect-ratio: 1/1;
   flex-shrink: 0;
-  width: max-content;
-  height: 100px;
+  width: 70px;
+  min-height: 70px;
   justify-content: center;
 }
 .form-add-task button:hover {
-  background-color: #242320;
+  background-color: var(--greenish-black-color-hover);
 }
 .form-add-task button img {
   width: 50%;
+}
+
+.tasks-section {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+.tasks-section .task-container {
+  background-color: var(--greenish-black-color);
+  border: 3px solid var(--dark-amber-color);
+  border-radius: 8px;
+  padding: 5px 20px;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+.tasks-section .task-container button {
+  justify-content: center;
+  background-color: var(--black-color);
+  border: 2px solid var(--dark-amber-color);
+  cursor: pointer;
+  border-radius: 8px;
+  aspect-ratio: 1/1;
+  min-height: 40px;
+  margin-bottom: 10px;
+}
+.tasks-section .task-container button:hover {
+  background-color: var(--greenish-black-color-hover);
+  outline: none;
+}
+.tasks-section .task-container img {
+  width: 50%;
+}
+.tasks-section .task-container .task-container-text {
+  margin-top: 5px;
+}
+.tasks-section .task-container .task-container-text h1 {
+  font-size: 22px;
+  line-height: 26px;
+}
+.tasks-section .task-container .task-container-text p {
+  font-size: 14px;
+  line-height: 16px;
 }
 
 /*# sourceMappingURL=base.css.map */
