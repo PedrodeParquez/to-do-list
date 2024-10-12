@@ -1,0 +1,82 @@
+.pop-up-edit {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.89);
+  z-index: 1;
+}
+
+.pop-up-container-edit {
+  border-radius: 10px 10px 0 0;
+  background-color: var(--greenish-black-color);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  height: 50%;
+  margin: 0 20px;
+  box-sizing: border-box;
+}
+
+.pop-up-body-edit {
+  padding-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+}
+.pop-up-body-edit input {
+  background-color: var(--greenish-black-color);
+  border-radius: 4px;
+  border: 2px solid var(--dark-amber-color);
+  color: var(--ivory-color);
+  margin: 0 20px;
+  height: 8%;
+}
+.pop-up-body-edit input:last-child {
+  height: 87%;
+}
+.pop-up-body-edit input:hover, .pop-up-body-edit input:focus {
+  background-color: var(--greenish-black-color-hover);
+  color: var(--ivory-color);
+}
+.pop-up-body-edit input:hover::-moz-placeholder, .pop-up-body-edit input:focus::-moz-placeholder {
+  background-color: var(--greenish-black-color-hover);
+  color: var(--ivory-color);
+}
+.pop-up-body-edit input:hover::placeholder, .pop-up-body-edit input:focus::placeholder {
+  background-color: var(--greenish-black-color-hover);
+  color: var(--ivory-color);
+}
+
+.pop-up-edit-buttons {
+  background-color: var(--greenish-black-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+.pop-up-edit-buttons button {
+  background-color: var(--greenish-black-color);
+  border: 2px solid var(--dark-amber-color);
+  border-radius: 4px;
+  color: var(--ivory-color);
+  cursor: pointer;
+  padding: 8px 20px;
+}
+.pop-up-edit-buttons button:last-child {
+  padding: 8px 25px;
+}
+.pop-up-edit-buttons button:hover {
+  border-color: var(--light-amber-color);
+  background-color: var(--greenish-black-color-hover);
+}/*# sourceMappingURL=pop_up_edit.css.map */

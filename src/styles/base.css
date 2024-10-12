@@ -47,7 +47,6 @@ body {
   border: 2px solid var(--light-amber-color);
   border-radius: 4px;
   cursor: pointer;
-  outline: none;
   background-color: var(--black-color);
   color: var(--ivory-color-hover);
   box-sizing: border-box;
@@ -58,6 +57,9 @@ body {
 .inputs-container input:hover {
   background-color: var(--greenish-black-color-hover);
   color: var(--ivory-color);
+}
+.inputs-container input:hover::-moz-placeholder {
+  color: var(--ivory-color-hover);
 }
 .inputs-container input:hover::placeholder {
   color: var(--ivory-color-hover);
@@ -104,6 +106,9 @@ body {
   justify-content: center;
   background-color: var(--black-color);
   border: 2px solid var(--dark-amber-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border-radius: 8px;
   aspect-ratio: 1/1;
@@ -112,7 +117,6 @@ body {
 }
 .tasks-section .task-container button:hover {
   background-color: var(--greenish-black-color-hover);
-  outline: none;
 }
 .tasks-section .task-container img {
   width: 50%;
@@ -127,6 +131,4 @@ body {
 .tasks-section .task-container .task-container-text p {
   font-size: 14px;
   line-height: 16px;
-}
-
-/*# sourceMappingURL=base.css.map */
+}/*# sourceMappingURL=base.css.map */
