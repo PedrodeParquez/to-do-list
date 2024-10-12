@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do Main Screen</title>
     <link rel="stylesheet" href="../src/styles/base.css">
+    <link rel="stylesheet" href="../src/styles/reset.css">
+    <link rel="stylesheet" href="../src/styles/pop_up/pop_up_edit.css">
+    <link rel="stylesheet" href="../src/styles/pop_up/pop_up_del.css">
+    <link rel="stylesheet" href="../src/styles/pop_up/pop_up_share.css">
 </head>
 <body>
     <form class="form-add-task">
@@ -12,7 +16,9 @@
             <input type="text" placeholder="Title...">
             <input type="text" placeholder="About...">
         </div>
-        <button><img src="/src/img/button_add_icon.svg"></button>
+        <button>
+            <img src="/src/img/button_add_icon.svg">
+        </button>
     </form>
     <div class="tasks-section">
         <div class="task-container">
@@ -23,5 +29,45 @@
             <button><img src="/src/img/button_del_icon.svg"></button>
         </div>
     </div>
+    <!-- 
+    <div class="pop-up-edit">
+        <div class="pop-up-container-edit">
+            <div class="pop-up-body-edit">
+                <input type="text" placeholder="Mini Input">
+                <input type="text" placeholder="Max Input">
+            </div>
+            <div class="pop-up-edit-buttons">
+                <button>Cancel</button>
+                <button>Save</button>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- 
+    <div class="pop-up-del">
+        <div class="pop-up-container-del">
+            <div class="pop-up-body-del">
+                <div class="pop-up-del-text">Delete this task?</div>
+                <div class="pop-up-del-buttons">
+                    <button>Yes</button>
+                    <button>No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- 
+    <div class="pop-up-share">
+        <div class="pop-up-container-share">
+            <div class="pop-up-share-buttons">
+                <button><img src="/src/img/share_box/copy_icon.svg"></button>
+                <button><img src="/src/img/share_box/vk_icon.svg"></button>
+                <button><img src="/src/img/share_box/telegram_icon.svg"></button>
+                <button><img src="/src/img/share_box/whatsup_icon.svg"></button>
+                <button><img src="/src/img/share_box/facebook_icon.svg"></button>
+            </div>
+        </div>
+    </div>
+    -->
 </body>
 </html>

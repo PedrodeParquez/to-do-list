@@ -1,0 +1,8 @@
+button,
+input {
+  &:focus,
+  &:active {
+    outline: none;
+    border: none;
+  }
+}
