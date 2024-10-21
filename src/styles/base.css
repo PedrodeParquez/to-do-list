@@ -96,6 +96,7 @@ body {
   background-color: var(--greenish-black-color);
   border: 3px solid var(--dark-amber-color);
   border-radius: 8px;
+  margin-bottom: 20px;
   padding: 5px 20px;
   display: flex;
   flex: 1;
@@ -111,24 +112,55 @@ body {
   align-items: center;
   cursor: pointer;
   border-radius: 8px;
-  aspect-ratio: 1/1;
   min-height: 40px;
+  min-width: 40px;
   margin-bottom: 10px;
 }
 .tasks-section .task-container button:hover {
   background-color: var(--greenish-black-color-hover);
 }
 .tasks-section .task-container img {
+  align-self: center;
   width: 50%;
 }
 .tasks-section .task-container .task-container-text {
   margin-top: 5px;
+  flex-direction: column;
 }
 .tasks-section .task-container .task-container-text h1 {
+  display: flex;
   font-size: 22px;
   line-height: 26px;
 }
 .tasks-section .task-container .task-container-text p {
+  display: flex;
   font-size: 14px;
   line-height: 16px;
+}
+
+.task-tools {
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+.task-tools button {
+  background-color: var(--greenish-black-color);
+  display: flex;
+  border: 2px solid var(--dark-amber-color);
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  min-height: 40px;
+  min-width: 40px;
+}
+.task-tools button:hover {
+  background-color: var(--greenish-black-color-hover);
+}
+.task-tools button img {
+  width: 50%;
+}
+.task-tools button:nth-child(2) img {
+  padding-left: 8px;
 }/*# sourceMappingURL=base.css.map */

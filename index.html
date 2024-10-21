@@ -11,24 +11,26 @@
     <link rel="stylesheet" href="../src/styles/pop_up/pop_up_share.css">
 </head>
 <body>
-    <form class="form-add-task">
+    <form id="add-task-form" class="form-add-task">
         <div class="inputs-container">
-            <input type="text" placeholder="Title...">
-            <input type="text" placeholder="About...">
+            <input id="task-title" type="text" placeholder="Title...">
+            <input id="task-about" type="text" placeholder="About...">
         </div>
-        <button>
+        <button type="button" id="add-task-button">
             <img src="/src/img/button_add_icon.svg">
         </button>
     </form>
-    <div class="tasks-section">
+   <div class="tasks-section" id="tasks-section">
+     <!--
         <div class="task-container">
             <div class="task-container-text">
                 <h1>Task Title</h1>
                 <p>Task body about this task...</p>
             </div>
-            <button><img src="/src/img/button_del_icon.svg"></button>
+            <button id="button-del-task"><img src="/src/img/button_del_icon.svg"></button>
         </div>
     </div>
+    -->
     <!-- 
     <div class="pop-up-edit">
         <div class="pop-up-container-edit">
@@ -37,8 +39,8 @@
                 <input type="text" placeholder="Max Input">
             </div>
             <div class="pop-up-edit-buttons">
-                <button>Cancel</button>
-                <button>Save</button>
+                <button>Cancel</button> 
+                <button>Save</button> 
             </div>
         </div>
     </div>
@@ -69,5 +71,6 @@
         </div>
     </div>
     -->
+    <script src="/src/scripts/add.js"></script>
 </body>
 </html>
