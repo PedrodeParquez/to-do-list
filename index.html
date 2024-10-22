@@ -16,11 +16,13 @@
             <input id="task-title" type="text" placeholder="Title...">
             <input id="task-about" type="text" placeholder="About...">
         </div>
-        <button type="button" id="add-task-button">
+        <button type="submit" id="add-task-button">
             <img src="/src/img/button_add_icon.svg">
         </button>
     </form>
-   <div class="tasks-section" id="tasks-section">
+    <div class="tasks-section" id="tasks-section">
+        <div class="empty-task-section" id="empty-task-section">NO TASKS</div>
+    </div>
      <!--
         <div class="task-container">
             <div class="task-container-text">
@@ -71,6 +73,7 @@
         </div>
     </div>
     -->
-    <script src="/src/scripts/add.js"></script>
+    <script type="module" src="/src/scripts/add.js"></script>
+    <script type="module" src="/src/scripts/delete.js"></script>
 </body>
 </html>

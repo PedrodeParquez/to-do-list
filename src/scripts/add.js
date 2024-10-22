@@ -1,44 +1,45 @@
-const addTaskForm = document.getElementById('add-task-form');
-const addTaskButton = document.getElementById('add-task-button');
-const tasksSection = document.getElementById('tasks-section');
+import { deleteTask } from './delete.js';
 
-function addTask(title, about) {
-    const taskContainer = document.createElement('div');
-    taskContainer.className = 'task-container';
+export let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-    const taskContainerText = document.createElement('div');
-    taskContainerText.className = 'task-container-text';
-        
-    const taskTitle = document.createElement('h1');
-    taskTitle.textContent = title;
-    const taskAbout = document.createElement('p');
-    taskAbout.textContent = about;
+export const addTaskForm = document.querySelector('#add-task-form');
+export const tasksSection = document.querySelector('#tasks-section');
+export const emptyTaskSection = document.querySelector('#empty-task-section')
+export const titleInput = document.querySelector('#task-title');
+export const aboutInput = document.querySelector('#task-about');
 
-    taskContainerText.appendChild(taskTitle);
-    taskContainerText.appendChild(taskAbout);
-    taskContainer.appendChild(taskContainerText);
+addTaskForm.addEventListener('submit', addTask);
+tasksSection.addEventListener('click', deleteTask);
 
-    const deleteButton = document.createElement('button');
-    deleteButton.className = 'delete-task-button';
-    deleteButton.innerHTML = '<img src="/src/img/button_del_icon.svg">';
+function addTask(event) {
+    event.preventDefault(); 
 
-    deleteButton.addEventListener('click', function() {
-        taskContainer.remove();
-    });
-    
-    taskContainer.appendChild(deleteButton);
-    tasksSection.appendChild(taskContainer);
-}
+    const task = {
+        id: Date.now(),
+        title: titleInput.value,
+        about: aboutInput.value
+    };
 
-addTaskButton.addEventListener('click', function() {
-    const title = document.getElementById('task-title').value;
-    const about = document.getElementById('task-about').value;
+    tasks.push(task);
 
-    if (title.trim() && about.trim()) {
-        addTask(title, about);
-        document.getElementById('task-title').value = '';
-        document.getElementById('task-about').value = '';
-    } else {
-        alert('Please enter title and description!');
+    const taskHTML = `
+        <div id="${task.id}" class="task-container">
+            <div class="task-container-text">
+                <h1>${task.title}</h1>
+                <p>${task.about}</p>
+            </div>
+            <button type="button" data-action="delete"><img src="/src/img/button_del_icon.svg"></button>
+        </div>`;
+
+    tasksSection.insertAdjacentHTML('beforeend', taskHTML);
+
+    titleInput.value = '';
+    aboutInput.value = '';
+    titleInput.focus();
+
+    if (tasksSection.children.length > 1) {
+        emptyTaskSection.classList.add('none');
     }
-});
+
+    console.log(tasksSection.children.length);
+}
