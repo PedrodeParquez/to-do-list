@@ -1,4 +1,5 @@
 import { deleteTask } from './delete.js';
+import { openMenuTask } from './open_menu_task.js';
 
 export let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
@@ -10,6 +11,7 @@ export const aboutInput = document.querySelector('#task-about');
 
 addTaskForm.addEventListener('submit', addTask);
 tasksSection.addEventListener('click', deleteTask);
+tasksSection.addEventListener('click', openMenuTask);
 
 function addTask(event) {
     event.preventDefault(); 
@@ -23,7 +25,7 @@ function addTask(event) {
     tasks.push(task);
 
     const taskHTML = `
-        <div id="${task.id}" class="task-container">
+        <div id="${task.id}" type="submit" class="task-container">
             <div class="task-container-text">
                 <h1>${task.title}</h1>
                 <p>${task.about}</p>

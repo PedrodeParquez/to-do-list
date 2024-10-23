@@ -22,6 +22,11 @@ export function deleteTask(event) {
     const parenNode = event.target.closest('.task-container');
 
     document.querySelector('#yes-button').addEventListener('click', function() {
+        const taskTools = parenNode.nextElementSibling;
+        if (taskTools && taskTools.classList.contains('task-tools')) {
+            taskTools.remove();
+        }
+
         const index = tasks.findIndex((task) => task.id === Number(parenNode.id));
         tasks.splice(index, 1);
         parenNode.remove();
