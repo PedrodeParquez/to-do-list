@@ -137,6 +137,7 @@ body {
 }
 .tasks-section .task-container .task-container-text {
   margin-top: 5px;
+  display: flex;
   flex-direction: column;
 }
 .tasks-section .task-container .task-container-text h1 {

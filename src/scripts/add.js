@@ -1,13 +1,16 @@
 import { deleteTask } from './delete.js';
 import { openMenuTask } from './open_menu_task.js';
 
-export let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-
 export const addTaskForm = document.querySelector('#add-task-form');
 export const tasksSection = document.querySelector('#tasks-section');
-export const emptyTaskSection = document.querySelector('#empty-task-section')
 export const titleInput = document.querySelector('#task-title');
 export const aboutInput = document.querySelector('#task-about');
+
+export let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+tasks.forEach((task) => renderTask(task));
+
+checkEmptyList();
 
 addTaskForm.addEventListener('submit', addTask);
 tasksSection.addEventListener('click', deleteTask);
@@ -23,7 +26,33 @@ function addTask(event) {
     };
 
     tasks.push(task);
+    saveToLocalStorage();
+    renderTask(task);
 
+    titleInput.value = '';
+    aboutInput.value = '';
+    titleInput.focus();
+
+    checkEmptyList();
+}
+
+export function checkEmptyList() {
+    if (tasks.length == 0 ) {
+        const emptyTaskHTML = `<div class="empty-task-section" id="empty-task-section">NO TASKS</div>`;
+        tasksSection.insertAdjacentHTML('afterbegin', emptyTaskHTML);
+    }
+
+    if (tasks.length > 0) {
+        const emptyTask = document.querySelector('#empty-task-section');
+        emptyTask ? emptyTask.remove() : null;
+    }
+}
+
+export function saveToLocalStorage() {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+}
+
+function renderTask(task) {
     const taskHTML = `
         <div id="${task.id}" type="submit" class="task-container">
             <div class="task-container-text">
@@ -34,14 +63,4 @@ function addTask(event) {
         </div>`;
 
     tasksSection.insertAdjacentHTML('beforeend', taskHTML);
-
-    titleInput.value = '';
-    aboutInput.value = '';
-    titleInput.focus();
-
-    if (tasksSection.children.length > 1) {
-        emptyTaskSection.classList.add('none');
-    }
-
-    console.log(tasksSection.children.length);
 }

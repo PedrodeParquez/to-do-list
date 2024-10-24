@@ -1,4 +1,4 @@
-import { tasksSection, tasks } from "./add.js";
+import { tasksSection, tasks, saveToLocalStorage } from "./add.js";
 
 export function openEditPopUp(taskContainer) {
     const existingPopUp = document.querySelector('.pop-up-edit');
@@ -43,6 +43,7 @@ export function openEditPopUp(taskContainer) {
         const index = tasks.findIndex((task) => task.id === Number(taskContainer.id));
         tasks[index].title = newTitle;
         tasks[index].about = newAbout;
+        saveToLocalStorage();
 
         taskContainer.querySelector('h1').textContent = newTitle;
         taskContainer.querySelector('p').textContent = newAbout;

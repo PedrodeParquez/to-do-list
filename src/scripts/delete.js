@@ -1,4 +1,4 @@
-import { tasks, tasksSection, emptyTaskSection } from './add.js';
+import { checkEmptyList, saveToLocalStorage, tasks } from './add.js';
 
 export function deleteTask(event) {
     if (event.target.dataset.action !== 'delete') return;
@@ -30,11 +30,9 @@ export function deleteTask(event) {
         const index = tasks.findIndex((task) => task.id === Number(parenNode.id));
         tasks.splice(index, 1);
         parenNode.remove();
+        saveToLocalStorage();
         popUpDel.remove();
-
-        if (tasksSection.children.length === 1) {
-            emptyTaskSection.classList.remove('none');
-        }
+        checkEmptyList();
     });
 
     document.querySelector('#no-button').addEventListener('click', function() {
