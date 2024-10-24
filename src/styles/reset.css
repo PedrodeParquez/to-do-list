@@ -1,6 +1,5 @@
-button:focus, button:active,
-input:focus,
-input:active {
+button,
+input {
   outline: none;
   border: none;
 }/*# sourceMappingURL=reset.css.map */
